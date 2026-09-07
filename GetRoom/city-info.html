@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="room-cards.css">
+    <title>Rooms | GetRoom</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="home.html" class="logo">
+            <svg width="110" height="36" viewBox="0 0 140 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="28" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#24B161">GetRoom</text>
+            </svg>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="find.html" class="nav-link active">Provinces</a>
+            <a href="#about" class="nav-link">About</a>
+        </div>
+
+        <div class="menu-dropdown">
+            <button class="menu-trigger" id="menuTrigger" aria-label="Menu">
+                <span class="menu-icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span class="menu-caret">▼</span>
+            </button>
+            <div class="menu-panel" id="menuPanel">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="find.html" class="nav-link active">Provinces</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="browse-page">
+        <section class="browse-header">
+            <h2 class="rooms-heading" id="cityHeading">Room Near {city}</h2>
+            <p class="rooms-subheading" id="citySubheading">Available rooms will appear below.</p>
+        </section>
+
+        <div class="rooms-toolbar">
+            <label for="sortSelect">Sort by</label>
+            <select class="sort-select" id="sortSelect">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="cheap">Price: Low to High</option>
+                <option value="expensive">Price: High to Low</option>
+            </select>
+        </div>
+
+        <div class="rooms-grid" id="roomsGrid">
+            <!-- room cards inserted here by city-info.js -->
+        </div>
+    </main>
+
+    <script src="rooms-data.js"></script>
+    <script src="room-cards.js"></script>
+    <script src="city-info.js"></script>
+</body>
+</html>

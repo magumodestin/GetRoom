@@ -1,0 +1,213 @@
+/*
+  room-cards.css
+  ---------------------------------------------------------------
+  Styles for the room card grid + carousel. Shared by home.html
+  and city-info.html so both pages look identical.
+
+  Colors reuse your existing brand colors from home.css:
+    #081b25  dark navy   (backgrounds, price text)
+    #24B161  green       (accent, buttons, active states)
+  No pink/red anywhere.
+*/
+
+.rooms-toolbar {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.rooms-toolbar label {
+    font-size: 0.85rem;
+    color: #5b6e8c;
+    margin-right: 0.5rem;
+    align-self: center;
+}
+
+.sort-select {
+    border: 1px solid #d3dbe3;
+    border-radius: 30px;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.88rem;
+    color: #1e2a3e;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.sort-select:focus {
+    border-color: #24B161;
+}
+
+.rooms-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e2a3e;
+    margin: 0 0 0.3rem 0;
+}
+
+.rooms-subheading {
+    color: #5b6e8c;
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 28px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.no-rooms {
+    color: #5b6e8c;
+    font-size: 0.95rem;
+    padding: 2rem 0;
+}
+
+.room-card {
+    background: #fff;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- carousel ---------- */
+.carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #dfe6ea;
+    overflow: hidden;
+    touch-action: pan-y; /* swiping photos never scrolls the page sideways */
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.35s ease;
+}
+
+.carousel-track img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(8, 27, 37, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 2;
+}
+
+.carousel:hover .carousel-arrow { opacity: 1; }
+.carousel-arrow:hover { transform: translateY(-50%) scale(1.08); }
+.carousel-arrow.prev { left: 8px; }
+.carousel-arrow.next { right: 8px; }
+.carousel-arrow svg { width: 14px; height: 14px; }
+
+@media (hover: none) {
+    .carousel-arrow { display: none; }
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    z-index: 2;
+}
+
+.carousel-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dots span.active {
+    background: #fff;
+    transform: scale(1.3);
+}
+
+/* ---------- card text ---------- */
+.room-info {
+    padding: 0.9rem 1rem 1.1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.room-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.98rem;
+}
+
+.room-name {
+    font-weight: 600;
+    color: #1e2a3e;
+}
+
+.room-rating {
+    flex-shrink: 0;
+    color: #1e2a3e;
+}
+
+.room-sub {
+    color: #5b6e8c;
+    font-size: 0.85rem;
+}
+
+.room-price {
+    margin-top: 4px;
+    font-size: 0.95rem;
+    color: #1e2a3e;
+}
+
+.room-price span {
+    font-weight: 700;
+    color: #081b25;
+}
+
+.details-btn {
+    display: inline-block;
+    text-align: center;
+    margin-top: 0.7rem;
+    background: #24B161;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 0;
+    border-radius: 30px;
+    transition: background 0.2s;
+}
+
+.details-btn:hover {
+    background: #1d9950;
+}

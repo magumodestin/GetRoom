@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SA Provinces · City Explorer</title>
+    <link rel="stylesheet"href="find.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+      
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="home.html" class="logo">
+            <svg width="110" height="36" viewBox="0 0 140 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="28" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#24B161">Get</text>
+                <text x="46" y="28" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#a0c0b0" letter-spacing="2.5">Room</text>
+            </svg>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#" class="nav-link active">Provinces</a>
+            <a href="#" class="nav-link">Cities</a>
+            <a href="#" class="nav-link">Map</a>
+            <a href="#" class="nav-link">About</a>
+        </div>
+
+        <div class="menu-dropdown">
+            <button class="menu-trigger" id="menuTrigger" aria-label="Menu">
+                <span class="menu-icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span class="menu-caret">▼</span>
+            </button>
+            <div class="menu-panel" id="menuPanel">
+                <a href="#" class="nav-link active">Provinces</a>
+                <a href="#" class="nav-link">Cities</a>
+                <a href="#" class="nav-link">Map</a>
+                <a href="#" class="nav-link">About</a>
+                <div class="menu-divider"></div>
+                <button class="menu-logout-item">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PROVINCES CARD ===== -->
+    <div class="categories-card">
+        <div class="card-header">
+            <h1>SOUTH AFRICA PROVINCES</h1>
+            <p>Click any province → see major cities · Click any city to select</p>
+        </div>
+
+        <div class="category-list" id="provinceList">
+            <!-- 9 provinces with city submenus (exactly as in find.html) -->
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Western Cape</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Western Cape" data-city="Cape Town">Cape Town</button>
+                    <button class="sub-option" data-province="Western Cape" data-city="Stellenbosch">Stellenbosch</button>
+                    <button class="sub-option" data-province="Western Cape" data-city="George">George</button>
+                    <button class="sub-option" data-province="Western Cape" data-city="Knysna">Knysna</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Eastern Cape</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Eastern Cape" data-city="Gqeberha (Port Elizabeth)">Gqeberha (Port Elizabeth)</button>
+                    <button class="sub-option" data-province="Eastern Cape" data-city="East London">East London</button>
+                    <button class="sub-option" data-province="Eastern Cape" data-city="Makhanda">Makhanda</button>
+                    <button class="sub-option" data-province="Eastern Cape" data-city="Mthatha">Mthatha</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>KwaZulu-Natal</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="KwaZulu-Natal" data-city="Durban">Durban</button>
+                    <button class="sub-option" data-province="KwaZulu-Natal" data-city="Pietermaritzburg">Pietermaritzburg</button>
+                    <button class="sub-option" data-province="KwaZulu-Natal" data-city="Richards Bay">Richards Bay</button>
+                    <button class="sub-option" data-province="KwaZulu-Natal" data-city="Margate">Margate</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Gauteng</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Gauteng" data-city="Johannesburg">Johannesburg</button>
+                    <button class="sub-option" data-province="Gauteng" data-city="Pretoria">Pretoria</button>
+                    <button class="sub-option" data-province="Gauteng" data-city="Soweto">Soweto</button>
+                    <button class="sub-option" data-province="Gauteng" data-city="Midrand">Midrand</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Mpumalanga</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Mpumalanga" data-city="Nelspruit (Mbombela)">Nelspruit (Mbombela)</button>
+                    <button class="sub-option" data-province="Mpumalanga" data-city="White River">White River</button>
+                    <button class="sub-option" data-province="Mpumalanga" data-city="Sabie">Sabie</button>
+                    <button class="sub-option" data-province="Mpumalanga" data-city="Secunda">Secunda</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Limpopo</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Limpopo" data-city="Polokwane">Polokwane</button>
+                    <button class="sub-option" data-province="Limpopo" data-city="Tzaneen">Tzaneen</button>
+                    <button class="sub-option" data-province="Limpopo" data-city="Modimolle">Modimolle</button>
+                    <button class="sub-option" data-province="Limpopo" data-city="Louis Trichardt">Louis Trichardt</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>North West</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="North West" data-city="Mahikeng">Mahikeng</button>
+                    <button class="sub-option" data-province="North West" data-city="Rustenburg">Rustenburg</button>
+                    <button class="sub-option" data-province="North West" data-city="Potchefstroom">Potchefstroom</button>
+                    <button class="sub-option" data-province="North West" data-city="Klerksdorp">Klerksdorp</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Free State</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Free State" data-city="Bloemfontein">Bloemfontein</button>
+                    <button class="sub-option" data-province="Free State" data-city="Welkom">Welkom</button>
+                    <button class="sub-option" data-province="Free State" data-city="Bethlehem">Bethlehem</button>
+                    <button class="sub-option" data-province="Free State" data-city="Parys">Parys</button>
+                </div>
+            </div>
+            <div class="category-item" data-has-sub="true">
+                <button class="cat-btn"><span>Northern Cape</span><span class="arrow">⤹</span></button>
+                <div class="submenu">
+                    <button class="sub-option" data-province="Northern Cape" data-city="Kimberley">Kimberley</button>
+                    <button class="sub-option" data-province="Northern Cape" data-city="Upington">Upington</button>
+                    <button class="sub-option" data-province="Northern Cape" data-city="Springbok">Springbok</button>
+                    <button class="sub-option" data-province="Northern Cape" data-city="De Aar">De Aar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback-area" id="feedbackArea">
+            <div class="feedback-message">
+                <span>📍</span>
+                <span class="feedback-text" id="feedbackText">South Africa's 9 provinces — click a province to see cities, then click any city</span>
+            </div>
+        </div>
+    </div>
+    <script src="find.js"></script>
+</body>
+</html>

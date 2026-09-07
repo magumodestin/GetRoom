@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="home.css">
+  <title>GetRoom | Student Accommodation</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="home.html" class="logo">
+            <svg width="110" height="36" viewBox="0 0 140 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="28" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#24B161">GetRoom</text>
+            </svg>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="find.html" class="nav-link">Provinces</a>
+            <a href="#about" class="nav-link about-link">About</a>
+            <a href="login.html" class="nav-link">Log in</a>
+            <a href="signup.html" class="nav-link signup-btn">Sign up</a>
+        </div>
+
+        <div class="menu-dropdown">
+            <button class="menu-trigger" id="menuTrigger" aria-label="Menu">
+                <span class="menu-icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span class="menu-caret">▼</span>
+            </button>
+            <div class="menu-panel" id="menuPanel">
+                <a href="find.html" class="nav-link">Provinces</a>
+                <a href="#about" class="nav-link about-link">About</a>
+                <div class="menu-divider"></div>
+                <a href="login.html" class="nav-link">Log in</a>
+                <a href="signup.html" class="nav-link signup-btn">Sign up</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <hr class="hr1" />
+
+        <input type="search" id="searchInput" placeholder="Search by city, e.g. Pretoria" />
+
+        <div id="heroContent">
+            <p>
+                Get student accommodation from budget to luxury near your
+                <a class="location-link" href="find.html">location</a>
+            </p>
+
+            <div>
+                <button class="location-btn" onclick="window.location.href='find.html'">Find room</button>
+            </div>
+        </div>
+    </main>
+
+    <section id="about" class="about-section" hidden>
+        <h2>About GetRoom</h2>
+        <p>GetRoom is a website established on 20 June 2026 that helps students in South Africa find rooms or accommodation to stay near the campus they're enrolled at.</p>
+    </section>
+
+    <script src="home.js"></script>
+</body>
+</html>
